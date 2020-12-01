@@ -1,0 +1,11 @@
+sudo: false
+
+language: java
+
+install:
+  - mkdir -p $HOME/bin
+  - wget http://www.dlvsystem.com/files/dlv.i386-linux-elf-static.bin -O $HOME/bin/dlv
+  - chmod +x $HOME/bin/dlv
+
+jdk:
+  - oraclejdk8

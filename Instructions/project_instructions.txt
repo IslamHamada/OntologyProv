@@ -1,0 +1,63 @@
+The project has the following modules:
+	*Commons: which has a file that contains GlobalVarialbes used across the whole project. It's important to understand what the variables are for.
+	*clipper-master: the clipper tool
+	*ReadingCSVIntoDB: it has the function for reading the csv into the database as tables. A table for each concept name and role name
+	*OntologyToDatalog: it contains a function that generates the datalog program of the ontology
+	*DNF: it contains the functions that convert the provenance formula into DNF
+	*DatalogParser: it contains files for creating the provenance for the already created tables plus a file for parsing the datalog ontology and creating the corresponding table for the rules
+	*CSVToJson: it contains files for transforming csv files into json
+	*CSVToDatalog: it contains a file for transforming a CSV table into Datalog file
+	*CreateFinalStatusTable: it creates a final status table with the main additional columns(concepts) that the ontology deduces
+
+So far we only use the status csv file
+
+After installing provsql, make sure to create the extensions uuid-ossp, provsql
+
+Then add the functions inside the file formula.sql in the following link:
+https://github.com/PierreSenellart/provsql/blob/master/test/sql/formula.sql
+
+
+*make sure to run the following command before trying any provsql commands in the terminal:
+ SET search_path TO public, provsql;
+ 
+*make sure to use setAutoCommit(true) on the database connection if you want to see the effect on the database
+
+
+*To achieve the main purpose of the project, do the following
+	1- use the file ReadingCSV.java to read the csv files into the database and add some more columns
+	2- run the file OntologyToDatalog.java to produce a datalog equivalent to the ontology that was written in protege
+	3- run the file CreateProvenance.java in the module DatalogParser to add provenance columns to tables
+	4- run the file CreateTables.java in the module DatalogParser to add tables for the rest of concepts of the ontology using the datalog representation generated before
+	5- run the following sql to get the formula(semiring) of a table, for example riskofphysicaldamage:
+		select *,formula(provenance(),'p') from riskofphysicaldamage;
+	6- use the module DNF to transform the semiring formula into DNF. check the file Example.java for some examples
+
+*There's a file called clear_database_commands.sql inside the resources folder of the main project you can use to empty the database and start again from scratch. You may need to run it multiple times because there are some dependencies between tables.
+
+
+*To run the datalog reasoner on the data, do the following:
+	1- use the file ReadingCSV.java to read the csv files into the database
+	2- export the status table from the Postgres database (it will be exported with added useful columns) 
+	3- \copy (SELECT * FROM status) to '/tmp/status_updated.csv' with csv header
+		Change the path if you want
+	4- run the file CSVToDatalog.java to generate a file Abox.dl
+	5- uncomment the function addAbox() inside the function execQuery() in the file QAHornSHIQ.java inside the clipper-reasoner module
+	6- You can then use the file OntologyToDatalog.java. Change the variable sparqlString to change the query the way you want. Uncomment the last line to print the result of executing the query. 		It will print the indiviuals that satisfy the Sparql query from the datalog file, which in this case has both the TBox and the ABox.
+		
+	
+*To generate the table status_final:
+	1- run the main function inside file CreateFinalTable
+	2- export it from the database using the following line
+		\copy (SELECT * FROM status_final) to '/tmp/status_final.csv' with csv header
+		Change the path if you want
+		
+*to export the files as json:
+	1- check the file CSVToJson, there exists 3 functions to turn 3 different files into json: status, status_updated (status with some additional columns), status_final (status_updated after adding columns deduced by the ontology)
+	2- for each transformation from csv to json, you might need some preprocessing(to provide a suitable format for the json jackson api) such as turning f and t to false and true respectively. Also you need to create a class with proper columns names and types. Check the functions already existing for a guide
+	
+*A note:
+	In clipper git repo, it's mentioned that you should download DLV. I downloaded it and installed it. Install it too if required.
+	You can find instructions in this link https://github.com/ghxiao/clipper
+	
+	
+

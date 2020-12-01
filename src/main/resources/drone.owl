@@ -1,0 +1,742 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#"
+     xml:base="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#flyingAbove -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#flyingAbove"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasAltitude -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasAltitude"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasPart"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasSpeed -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasSpeed"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#inPath -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#inPath"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#near -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#near">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#reachable"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#pilotedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#pilotedBy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#reachable -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#reachable"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#veryClose -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#veryClose">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#near"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#AlmostOutOfRCRange -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#AlmostOutOfRCRange"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Animal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Animal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#MovingObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Battery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Battery"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Bird -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Bird">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#BlindingLight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#BlindingLight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowVisibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Damaged -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Damaged"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Dark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Dark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowVisibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#DirtyLenses -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#DirtyLenses">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowVisibility"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Drone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Drone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#MovingObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#EmptyBattery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#EmptyBattery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowBattery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#ExtremeWeather -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#ExtremeWeather"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Fast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Fast"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Flying -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Flying">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#flyingAbove"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Foggy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Foggy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowVisibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#FragileObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#FragileObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#FrontLeftPropeller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#FrontLeftPropeller">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Propeller"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#FrontRightPropeller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#FrontRightPropeller">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Propeller"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Glass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Glass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#FragileObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Gloomy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Gloomy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#HighChanceOfPrecipitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#GoingBackwards -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#GoingBackwards">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Ground -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Ground"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#High -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#High"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#HighChanceOfPrecipitation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#HighChanceOfPrecipitation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Human -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Human">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Hurricane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Hurricane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#ExtremeWeather"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Indoor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Indoor"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Inexperienced -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Inexperienced"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Lamp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Lamp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#FragileObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Lightning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Lightning">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#ExtremeWeather"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LostConnection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LostConnection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Warning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Low -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Low"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowBattery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowBattery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Battery"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowVisibility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowVisibility"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#MovingObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#MovingObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#NotWaterproofDrone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#NotWaterproofDrone">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#WaterproofDrone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#OutOfRCRange -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#OutOfRCRange">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LostConnection"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Propeller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Propeller"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Rain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Rain"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RearLeftPropeller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RearLeftPropeller">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Propeller"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RearRightPropeller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RearRightPropeller">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Propeller"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfHumanDamage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfHumanDamage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Warning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfInternalDamage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfInternalDamage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Warning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Warning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Snow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Snow"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#StrongWind -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#StrongWind"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Sun -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Sun"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Warning -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Warning"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Water -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Water"/>
+    
+
+
+    <!-- http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#WaterproofDrone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#WaterproofDrone"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#AlmostOutOfRCRange"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowBattery"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LostConnection"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Flying"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Damaged"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Flying"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#EmptyBattery"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#NotWaterproofDrone"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#HighChanceOfPrecipitation"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfInternalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#NotWaterproofDrone"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Rain"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfInternalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#NotWaterproofDrone"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Snow"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfInternalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#NotWaterproofDrone"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#flyingAbove"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Water"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasAltitude"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Low"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfInternalDamage"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#NotWaterproofDrone"/>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#flyingAbove"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Water"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#EmptyBattery"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfInternalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Rain"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#StrongWind"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Hurricane"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#ExtremeWeather"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#pilotedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Inexperienced"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfInternalDamage"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Indoor"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#near"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Human"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfHumanDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowVisibility"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#near"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#StrongWind"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowBattery"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasAltitude"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#High"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#LowBattery"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasAltitude"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Low"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#hasSpeed"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Fast"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#inPath"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#reachable"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#near"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#FragileObject"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#near"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Human"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfHumanDamage"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#near"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object"/>
+            </owl:Restriction>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#pilotedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Inexperienced"/>
+            </owl:Restriction>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Class>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#environment"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Indoor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#inPath"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Lamp"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#BlindingLight"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#inPath"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Sun"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#BlindingLight"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#near"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#MovingObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#veryClose"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Human"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfHumanDamage"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#veryClose"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Lamp"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfInternalDamage"/>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#veryClose"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/islam/ontologies/2020/9/untitled-ontology-48#RiskOfPhysicalDamage"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

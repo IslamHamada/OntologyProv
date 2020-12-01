@@ -1,0 +1,80 @@
+movingobject(X) :- drone(X).
+riskofphysicaldamage(X) :- hasaltitudesomelow(X), hasspeedsomefast(X).
+riskofinternaldamage(X) :- flyingabovesomewater(X), haspartsomeemptybattery(X), notwaterproofdrone(X).
+highchanceofprecipitation(X) :- gloomy(X).
+animal(X) :- bird(X).
+riskofphysicaldamage(X) :- flying(X), haspartsomeemptybattery(X).
+riskofhumandamage(X) :- nearsomehuman(X), environmentsomeindoor(X).
+riskofinternaldamage(X) :- environmentsomehighchanceofprecipitation(X), notwaterproofdrone(X).
+riskofinternaldamageandriskofphysicaldamage(X) :- hasaltitudesomelow(X), flyingabovesomewater(X), notwaterproofdrone(X).
+lowvisibility(X) :- blindinglight(X).
+riskofphysicaldamage(X) :- inpathsomeobject(X), reachablesomeobject(X).
+riskofinternaldamage(X) :- environmentsomerain(X), notwaterproofdrone(X).
+riskofphysicaldamage(X) :- pilotedbysomeinexperienced(X), nearsomeobject(X).
+propeller(X) :- rearrightpropeller(X).
+riskofphysicaldamage(X) :- haspartsomelowbattery(X), hasaltitudesomehigh(X).
+riskofphysicaldamage(X) :- goingbackwards(X).
+warning(X) :- riskofphysicaldamage(X).
+riskofinternaldamageandriskofphysicaldamage(X) :- pilotedbysomeinexperienced(X), environmentsomeextremeweather(X).
+lowvisibility(X) :- foggy(X).
+lostconnection(X) :- outofrcrange(X).
+riskofphysicaldamage(X) :- flying(X), haspartsomedamaged(X).
+warning(X) :- riskofinternaldamage(X).
+lowvisibility(X) :- dark(X).
+battery(X) :- lowbattery(X).
+propeller(X) :- frontleftpropeller(X).
+nothing(X) :- notwaterproofdrone(X), waterproofdrone(X).
+movingobject(X) :- animal(X).
+propeller(X) :- frontrightpropeller(X).
+environmentsomelowvisibility(X) :- dirtylenses(X).
+riskofinternaldamage(X) :- environmentsomesnow(X), notwaterproofdrone(X).
+fragileobject(X) :- glass(X).
+object(X) :- human(X).
+warning(X) :- lostconnection(X).
+propeller(X) :- rearleftpropeller(X).
+extremeweather(X) :- lightning(X).
+lostconnection(X) :- haspartsomelowbattery(X), almostoutofrcrange(X).
+riskofphysicaldamage(X) :- riskofinternaldamageandriskofphysicaldamage(X).
+riskofphysicaldamage(X) :- environmentsomelowvisibility(X), nearsomeobject(X).
+fragileobject(X) :- lamp(X).
+object(X) :- movingobject(X).
+riskofinternaldamage(X) :- riskofinternaldamageandriskofphysicaldamage(X).
+riskofhumandamage(X) :- nearsomehuman(X), nearsomefragileobject(X).
+hurricane(X) :- strongwind(X), rain(X).
+lowbattery(X) :- emptybattery(X).
+extremeweather(X) :- hurricane(X).
+warning(X) :- riskofhumandamage(X).
+riskofphysicaldamage(X) :- environmentsomestrongwind(X), haspartsomelowbattery(X).
+object(X) :- fragileobject(X).
+blindinglight(Y) :- inpath(Y,X), lamp(X).
+environmentsomeextremeweather(Y) :- extremeweather(X), environment(Y,X).
+hasspeedsomefast(Y) :- fast(X), hasspeed(Y,X).
+riskofphysicaldamage(Y) :- indoor(X), environment(Y,X).
+hasaltitudesomelow(Y) :- low(X), hasaltitude(Y,X).
+environmentsomerain(Y) :- rain(X), environment(Y,X).
+environmentsomehighchanceofprecipitation(Y) :- highchanceofprecipitation(X), environment(Y,X).
+pilotedbysomeinexperienced(Y) :- inexperienced(X), pilotedby(Y,X).
+environmentsomestrongwind(Y) :- strongwind(X), environment(Y,X).
+haspartsomedamaged(Y) :- haspart(Y,X), damaged(X).
+riskofphysicaldamage(Y) :- veryclose(Y,X), object(X).
+hasaltitudesomehigh(Y) :- high(X), hasaltitude(Y,X).
+haspartsomelowbattery(Y) :- haspart(Y,X), lowbattery(X).
+flying(Y) :- flyingabove(Y,X), object(X).
+environmentsomeindoor(Y) :- indoor(X), environment(Y,X).
+riskofphysicaldamage(Y) :- movingobject(X), near(Y,X).
+environmentsomelowvisibility(Y) :- lowvisibility(X), environment(Y,X).
+reachablesomeobject(Y) :- reachable(Y,X), object(X).
+riskofinternaldamage(Y) :- veryclose(Y,X), lamp(X).
+nearsomeobject(Y) :- near(Y,X), object(X).
+nearsomefragileobject(Y) :- near(Y,X), fragileobject(X).
+flyingabovesomewater(Y) :- flyingabove(Y,X), water(X).
+riskofhumandamage(Y) :- human(X), veryclose(Y,X).
+blindinglight(Y) :- inpath(Y,X), sun(X).
+haspartsomeemptybattery(Y) :- emptybattery(X), haspart(Y,X).
+nearsomehuman(Y) :- human(X), near(Y,X).
+inpathsomeobject(Y) :- inpath(Y,X), object(X).
+environmentsomesnow(Y) :- snow(X), environment(Y,X).
+near(X,Y) :- veryclose(X,Y).
+reachable(X,Y) :- near(X,Y).
+% rewritten queries:
+ans(X0) :- object(X0).

@@ -1,0 +1,123 @@
+For the provenance, we use the tool provsql in this link https://github.com/PierreSenellart/provsql
+
+There are many uses of Provsql. There are different types of provenance. We are interested in one which I'll show how to perform.
+
+Assume we have two tables student with the following columns (name,country,subjects) and student2 with the following columns (name,age,subjects).
+
+	select * from student;
+	
+	name | country | subjects              
+	------+---------+----------
+	 s4   | c2      |        1 
+	 s2   | c1      |        2 
+ 	 s3   | c2      |        3 
+	 s1   | c1      |        4 
+	 s7   | c2      |        1 
+	 s5   | c1      |        2 
+	 s6   | c2      |        3 
+ 
+ 	select * from student2;
+ 
+ 	name | age | subjects 
+	------+-----+----------
+	 s1   |  20 |        1 
+	 s2   |  20 |        2 
+	 s3   |  20 |        3 
+	 s4   |  20 |        4 
+ 
+And that we want to get the provenance for this query: select country,age from student join student2 on student.subjects=student2.subjects;
+
+To do so first we need to add a provenance columns to the tables student and student2 using the following commands:
+	SELECT add_provenance('student');
+	SELECT add_provenance('student2');
+Now we have an additional column (provsql) in both of the previous two tables
+
+	select * from student;
+	
+	 name | country | subjects |               provsql                
+	------+---------+----------+--------------------------------------
+	 s4   | c2      |        1 | 97d60adb-4eb9-405e-a6b8-5efb9ee00e80
+	 s2   | c1      |        2 | cb9630e5-edf8-470b-982e-002a7549c12d
+	 s3   | c2      |        3 | 2ceba2fa-8323-4fb0-8ee6-3790687988e7
+	 s1   | c1      |        4 | 3c48375b-5b4b-4eec-b7f7-eb7a63de9ec3
+	 s7   | c2      |        1 | b059acaa-3393-451f-802d-60abbdafe326
+	 s5   | c1      |        2 | 3d83dcb9-573f-48f9-a480-e4fad74d46a6
+	 s6   | c2      |        3 | 1e93608e-d975-4ec3-9f8d-e469a5fb832b
+
+ 
+	 select * from student2;
+ 
+	 name | age | subjects |               provsql                
+	------+-----+----------+--------------------------------------
+	 s1   |  20 |        1 | 23030052-f82a-473c-8cf3-72429a293404
+	 s2   |  20 |        2 | 2fc071cc-7408-4e76-9eaa-7dcc6a7be944
+	 s3   |  20 |        3 | 5e163b08-2e9a-40e7-8c88-0251abd0abb8
+	 s4   |  20 |        4 | 7a6e8b2c-4392-4b18-846b-7fcab643f4ae
+
+
+
+That's already enough to apply some kinds of provenacne, but for our specific application we still need to run more commands:
+	select create_provenance_mapping('n1','student','name');
+	select create_provenance_mapping('n2','student2','name');
+The commands create two tables n1 and n2 and they simply contain a mapping for the column 'name' and the column 'provsql' for each table
+
+	select * from n1;
+
+	 value |              provenance              
+	-------+--------------------------------------
+	 s4    | 97d60adb-4eb9-405e-a6b8-5efb9ee00e80
+	 s2    | cb9630e5-edf8-470b-982e-002a7549c12d
+	 s3    | 2ceba2fa-8323-4fb0-8ee6-3790687988e7
+	 s1    | 3c48375b-5b4b-4eec-b7f7-eb7a63de9ec3
+	 s7    | b059acaa-3393-451f-802d-60abbdafe326
+	 s5    | 3d83dcb9-573f-48f9-a480-e4fad74d46a6
+	 s6    | 1e93608e-d975-4ec3-9f8d-e469a5fb832b
+
+
+	select * from n2;
+	
+ 	 value |              provenance              
+	-------+--------------------------------------
+	 s1    | 23030052-f82a-473c-8cf3-72429a293404
+	 s2    | 2fc071cc-7408-4e76-9eaa-7dcc6a7be944
+	 s3    | 5e163b08-2e9a-40e7-8c88-0251abd0abb8
+	 s4    | 7a6e8b2c-4392-4b18-846b-7fcab643f4ae
+
+Then we need to use the function called formula() but the function needs to be created first. This function uses a mapping such as n1 or n2 and generate a formula that explains the output of a sql query we choose.
+ You can find the required commands to create it with an example in this link https://github.com/PierreSenellart/provsql/blob/master/test/sql/formula.sq
+ 
+It's important to noice that the function formula() takes two parameters:
+	1- the first is provenance()
+	2- One mapping such as n1 or n2
+It's important to note that function only use one mapping, so we need to make sure that the mapping maps every entry in the tables we want to be referenced
+Since we want to refer to the tables student and student2 then we need to create a mapping that maps the name column of both tables. We can use the following command:
+	create table n3 as ( select * from n1 union select * from n2);
+
+Now we can finally try the function formula out using the new mapping n3:
+
+	select country,age,formula(provenance(),'n3') from student join student2 on student.subjects=student2.subjects;
+	
+	 country | age |  formula  |               provsql                
+	---------+-----+-----------+--------------------------------------
+	 c2      |  20 | (s4 ⊗ s1) | a680fbb4-272a-55bb-926f-4b51fed33eb6
+	 c1      |  20 | (s2 ⊗ s2) | 84f78eab-e134-524f-960f-05f866099b28
+	 c2      |  20 | (s3 ⊗ s3) | 3434860e-2a8b-54a7-8ede-60d8fbda41f1
+	 c1      |  20 | (s1 ⊗ s4) | cfcf4c15-26b3-52ad-88f7-14c60de32827
+	 c2      |  20 | (s7 ⊗ s1) | 32cf9e4e-ad28-586a-a6a2-4175d0591af8
+	 c1      |  20 | (s5 ⊗ s2) | fceae17f-7c89-5a01-8c21-e8d40ea0fd91
+	 c2      |  20 | (s6 ⊗ s3) | 34901aae-49e6-592c-8133-bdba83119e2a
+	 
+	 The output means that for the entry (c2, 20), it was produced due to then exsitence of both s4 and s1. s4 or s1 can be either from the table student or the table student2. No way to know for sure because the columns we created the mapping on have entries in common and hence the ambiguity. We could have avoided that by making sure we create the mappings on columns with unique entries. Check the file provenance2.txt for an example
+	 
+	 Another example that's more complicated. 
+	 create table result as (select distinct country,age from student join student2 on student.subjects=student2.subjects);
+	 create table result2 as (select distinct country,age from student join student2 on student.name=student2.name);
+	 select *,formula(provenance(),'n3') from result join result2 on result.country<>result2.country;
+
+	  country | age | country | age |                                   formula                                   |               provsql                
+	 ---------+-----+---------+-----+-----------------------------------------------------------------------------+--------------------------------------
+ 	  c1      |  20 | c2      |  20 | (((s2 ⊗ s2) ⊕ (s1 ⊗ s4) ⊕ (s5 ⊗ s2)) ⊗ ((s4 ⊗ s4) ⊕ (s3 ⊗ s3)))             | c1bc527d-2209-5f76-b035-ace661e64a93
+ 	  c2      |  20 | c1      |  20 | (((s4 ⊗ s1) ⊕ (s3 ⊗ s3) ⊕ (s7 ⊗ s1) ⊕ (s6 ⊗ s3)) ⊗ ((s2 ⊗ s2) ⊕ (s1 ⊗ s1))) | 13fa8720-3fc4-535a-8ec2-d97dc3e532e8
+
+	  In this example each entry has more than a reason to exist. ⊗ signifies conjunction and ⊕ signifies disjunction. So the formula is simply a propositional formula that only contains conjunctions and disjunctions, and the formula is satsifiable for some interpretation. Each interpretaion can be viewed as a reason for the row to exist
+

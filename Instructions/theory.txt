@@ -1,0 +1,57 @@
+There are drones that record some data and we need to reason about the data provided by the drones. For example, if there's a tree on a close distance and the drone speed is high we can deduce that there's a risk of crashing and then a warning message can show up to the user. And such a message should state the cause of the warning. In this case flying fast close to a tree.
+
+Some data will be provided either manually or using a machine learning model such as the objects the drone can detect, the distance to those objects, the weather, the drone speed, the battery status, etc. 
+
+You will be provided with two tables: status and objects. Status is concerned with the status of the drone such as speed, battery, altitude and so on. Object is concerned with objects the drone could detect during the record.
+
+The implementation we have so far is only concerned with the status table but this will be extended.
+
+You can find the two csv tables in the following links:
+https://docs.google.com/spreadsheets/d/1uw59PK-1SVtm1urMbIASE2quF6N4jy6nIAfQb7qQNTM/edit#gid=1762384269
+https://docs.google.com/spreadsheets/d/1uw59PK-1SVtm1urMbIASE2quF6N4jy6nIAfQb7qQNTM/edit#gid=487556862
+
+Now that we have data we need some axioms(an ontology) that we can use to reason over the data and generate more information. For example, if the drone speed is high and there's a close tree then there's a risk of crashing.
+
+There's an ontology we used. You can check it in this link:
+https://docs.google.com/document/d/19dmvCaHrBXTn8kjoQM-tVZ5QI2lXdtQIhFuaOmU_dNE/edit
+
+The next step is to try to use the data in the csv tables as an ABox and the ontology as a TBox and add the new information to the tables we have so far and be able to know which drones have risk of crashing and so on for more properties.
+
+But so far the data isn't compatible with each other. The data is in CSV format. The ontology is written as text.
+
+We could give all data we have to Protégé by turning the ontology to a TBox and turning the data in the table to an ABox. Then we can use the reasoner to get all sorts of deductions. But one functionality would be missing which is the semiring which keeps track of why some property holds for the drone. For example, the reasoner might show that there's a risk of physical damage but we won't simply know why this is the case. And we need to know the reasons for why such a risk is imposed. It could be that there are two reasons:
+	1- that we are flying fast close to a tree 
+	2- the drone is piloted by an inexperienced 
+And we want to get all the reasons for whatever dedcutions we get. And for that we need a provenance functionality. Such a funtionality exists for PostgresSQL databases using an extension called ProvSQL. You can find it in this https://github.com/PierreSenellart/provsql. SO TO USE SUCH AN EXTENSION WE HAVE TO REPRESENT THE DATA AS TABLES IN A POSTGRES DATABASE.
+
+So First task is to convert the csv input data to tables into a Postgres database which is relatively simple.
+
+Second task is to write the ontology in a proper format such as owl either manually or in a software such as Protégé.
+
+Third task is to reason over the data in the database using the ontology:
+	1- There's tool called Ontop that we thought about using which given, the ontology, the table and mappings from columns to concepts names, it converts SPARQL queries to a SQL queries. So if we query the risk of physical damage of the drone we provide a SPARQL query for that. Then the query would be converted to a SQL query. We then can run the SQL query and apply the provenance on the resultant table and consequently get which drones have the risk of physical damage and why such a risk exists. But unfortunately such an approach didn't exist because Ontop can only perform on a strict subset of Ontologies. A subset smaller than the one we need.
+	2- The other approach is to use Clipper. Clipper is a datalog reasoner for conjunctive query answering. You can provide it an ontology and sparql query then it returns the individuals satisfying the query by convertings all the data into aa datalog program and then use a DL reasoner. So far it seems expressive enough but it adds more challenges because it doesn't handle databases.
+	
+
+Currently we are using Clipper but to do so we had to solve the following problems:
+	1- We needed to read the csv tables into postgres tables
+	2- We needed to generate new columns because Clipper doesn't handle concrete domains such as:
+		We want to know which drones are fast_speed, so we create an additional boolean column called fast_speed whose value is true if the value in the speed column is greater than 13. And that's easily doable in SQL tables.
+	3- We needed to use some commands and generate some columns for the provenance which I explained in the file provenacne.txt
+	4- Also we needed to create new tables for the new concept names we use such as a table for the concept RiskOfPhysicalDamage, RiskOfInternalDamage, RiskOfHumanDamage.
+		To do that we used the datalog program generated by clipper in the following way:
+			Assume we have a table that represents the concept C, another for D and another for the role name B. And assume we have the following datalog programs:
+			A(X):- C(X), D(X).
+			ans(Y):- A(X), B(X,Y).
+			And that we need to create a table for ans. Then we can do the following:
+				1- create the table for A using the sql command: create table A as (select * from C inner join D on C.v1 = D.v1);
+				2- then create a table for ans using the sql command: create table ans as (select B.v2 from A inner join B on A.v1 = B.v1);
+					* Where v1 indicates the first column and v2 indicates the second column
+					
+		So we simply need to parse the rules of the datalog and so far they are in one of 3 forms. You can find them in Table 3 of the following paper: http://www.kr.tuwien.ac.at/staff/xiao/pub/2012/eostx2012-aaai-hshiq.pdf
+		And so far we only use the first two rules and simple version of the 3rd rule, in which the rule body has only one clause.
+		So I created a parser for the rules that automatically generates the equivalent SQL query to create it. But we only need to make sure to create the tables in a proper order.
+		If we are talking about the previous example we need to make sure the table A is created before the table for ans.
+	5- After step 4 we already have the original status table with some additional columns. And we have many other tables for important concepts and some useful intermediate tables.
+	6- Now we can simply apply the provenance to any concept we want
+	7- we can also export data out in csv and also convert it into json if needed
