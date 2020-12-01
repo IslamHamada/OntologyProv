@@ -38,7 +38,9 @@ public class GlobalVaribales {
 
 
     ////note that the arrays: concepts, has_role, roles, bool, used have to be of the same size and the values of the arrays at a specific index are related
+    
     // the concepts names corresponding to the table columns. also they are the names of the tables that will be created
+    //it's defined as 2D array because some columns in the table Status can cause multiple tables to be created such as flying_above because it can be flying above water or ground, etc.
     public static String[][] concepts = {{}, {"drone"}, {}, {}, {"experienced"}, {}, {}, {}, {}, {"dirtylenses"}, {}, {}, {}, {}, {"goingbackwards"}, {"indoor"}, {"waterproofdrone"}, {"ground", "water"}, {},
             {"low"}, {"high"}, {"fast"}, {"emptybattery"}, {"lowbattery"}, {"notwaterproofdrone"}, {"inexperienced"}};
 
